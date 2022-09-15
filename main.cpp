@@ -1,10 +1,12 @@
-// add your code as appropriate 
 #include <iostream>
-
-int main()
-{
-  
-
-  
-  return 0;
+#include "reservoir.h"
+int main(){
+    std::string date;
+    std::cout << "Enter date: " << std::endl;
+    std::cin >> date;
+	get_east_storage(date);
+    get_min_east();
+    get_max_east();
+return 0;
 }
+
