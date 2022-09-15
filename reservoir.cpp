@@ -20,10 +20,10 @@ double get_east_storage(std::string date){
     while(fin >> fileDate >> eastSt >> eastEl >> westSt >> westEl) { 
         fin.ignore(INT_MAX, '\n'); //ignores rest of the field names 
         if (date == fileDate ){
-            std::cout << "East basin storage: " << eastSt << " billion gallons." << std::endl;
+            return eastSt;
         }
     }
-    return 0;
+    return eastSt;
     fin.close();
 }
 
@@ -46,9 +46,8 @@ double get_min_east(){ //this function should return the minimum storage in the 
             min = eastSt;
         }
     }
-    std::cout << "Minimum storage in East basin: " << min << " billion gallons." << std::endl;
     fin.close();
-    return 0;
+    return min;
 } 
 
 double get_max_east(){ //this function should return the maximum storage in the East basin in the 2018.
@@ -70,13 +69,35 @@ double get_max_east(){ //this function should return the maximum storage in the 
             max = eastSt;
         }
     }
-    std::cout << "Maximum storage in East basin: " << max << " billion gallons." << std::endl;
     fin.close(); 
-    return 0;
+    return max;
 }
 
 // std::string compare_basins(std::string date){
+//     std::ifstream fin("Current_Reservoir_Levels.tsv"); 
+//     if (fin.fail()) {
+//         std::cerr << "File cannot be opened for reading." << std::endl; //c outs errors
+//         exit(1); 
+//     }
+//     std::string junk;        
+//     getline(fin, junk); 
 
+//     std::string fileDate;
+//     double eastSt, eastEl, westSt, westEl;
+
+//     while(fin >> fileDate >> eastSt >> eastEl >> westSt >> westEl) { 
+//         fin.ignore(INT_MAX, '\n'); 
+//         if (eastSt > westSt){
+//             std::cout << "East" << std::endl;
+//         }
+//         else if (westSt > eastSt) {
+//             std::cout << "West" << std::endl;
+//         }
+//         else {
+//             std::cout << "Equal" << std::endl;
+//         }
+//     }
+//     fin.close(); 
 //     return 0;
 // }
 
