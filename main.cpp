@@ -1,5 +1,7 @@
 #include <iostream>
 #include "reservoir.h"
+#include "reverseorder.h"
+
 int main(){
     std::string date;
     std::cout << "Enter date: " << std::endl;
@@ -15,7 +17,16 @@ int main(){
     std::cout << "Enter date: " << std::endl;
     std::cin >> date;
     std:: cout << compare_basins(date) << std::endl;
-    
+
+    std::string earlyDate;
+    std::cout << "Enter earlier date: " << std::endl;
+    std::cin >> earlyDate;
+
+    std::string lateDate;
+    std::cout << "Enter later date: " << std::endl;
+    std::cin >> lateDate;
+    reverse_order(earlyDate, lateDate);
+
     return 0;
 }
 
